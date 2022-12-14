@@ -1,0 +1,5 @@
+---
+# defaults file for ansible-vrealize_orchestrator
+validate_certs: False
+workflow_wait: False
+workflow_timeout_seconds: 30

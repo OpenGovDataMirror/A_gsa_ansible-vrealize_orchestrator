@@ -1,0 +1,17 @@
+---
+- name: run vro workflow
+  vmware_vro_workflow:
+    uuid: "{{ workflow_uuid }}"
+    state: "{{ workflow_state | default(omit) }}"
+    hostname: "{{ vro_host }}"
+    username: "{{ vro_user }}"
+    password: "{{ vro_pass }}"
+    validate_certs: "{{ validate_certs | default(omit) }}"
+    inputs: "{{ workflow_parameters | default(omit) }}"
+    timeout: "{{ workflow_timeout_seconds | default(omit) }}"
+    wait_for_workflow: "{{ workflow_wait | default(omit) }}"
+  register: post_workflow_run
+
+- name: debug vro_workflow_run
+  debug:
+    var: post_workflow_run

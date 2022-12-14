@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    grace_ip: ""
+    grace_hostname: ""
+    snow_sys_id: ""
+    workflow_uuid: ""
+    vro_host: ""
+    vro_user: ""
+    vro_pass: ""
+
+  roles:
+    - vrealize_orchestrator

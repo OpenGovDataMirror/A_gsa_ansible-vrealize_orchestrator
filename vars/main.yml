@@ -1,0 +1,38 @@
+---
+# vars file for ansible-vrealize_orchestrator
+workflow_uuid: ""
+vro_host: ""
+vro_pass: ""
+vro_user: ""
+workflow_parameters:
+  parameters:
+  - name: ip
+    scope: local
+    type: string
+    value:
+      string:
+        value: "{{ grace_ip }}" #ip address of new instance
+  - name: os
+    scope: local
+    type: string
+    value:
+      string:
+        value: "{{ ansible_os_family }}" #os (Windows/RedHat)
+  - name: sys_id
+    scope: local
+    type: string
+    value:
+      string:
+        value: "{{ snow_sys_id }}" #servicenow ticket to update
+  - name: hostname
+    scope: local
+    type: string
+    value:
+      string:
+        value: "{{ grace_hostname }}" #hostname of new instance
+  - name: env
+    scope: local
+    type: string
+    value:
+      string:
+        value: "{{ grace_env }}" #env of new instance (PROD/TEST)
